@@ -1,4 +1,5 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Sanghwan Bae</title><style>
+/* cspell:disable-file */
 /* webkit printing magic: print all background colors */
 html {
 	-webkit-print-color-adjust: exact;
@@ -282,6 +283,29 @@ ol > li {
 	margin-right: 1em;
 }
 
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
 time {
 	opacity: 0.5;
 }
@@ -319,7 +343,7 @@ img.icon {
 	display: block;
 	object-fit: cover;
 	width: 100%;
-	height: 30vh;
+	max-height: 30vh;
 }
 
 .page-header-icon {
@@ -460,151 +484,169 @@ blockquote {
 	margin-top: 0.25em;
 }
 
-.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
-.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
 .mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
-
-.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
-
-.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
-
-.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
-
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
 .highlight-default {
+	color: rgba(55, 53, 47, 1);
 }
 .highlight-gray {
-	color: rgb(155,154,151);
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
 }
 .highlight-brown {
-	color: rgb(100,71,58);
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
 }
 .highlight-orange {
-	color: rgb(217,115,13);
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
 }
 .highlight-yellow {
-	color: rgb(223,171,1);
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
 }
 .highlight-teal {
-	color: rgb(15,123,108);
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
 }
 .highlight-blue {
-	color: rgb(11,110,153);
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
 }
 .highlight-purple {
-	color: rgb(105,64,165);
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
 }
 .highlight-pink {
-	color: rgb(173,26,114);
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
 }
 .highlight-red {
-	color: rgb(224,62,62);
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
 }
 .highlight-gray_background {
-	background: rgb(235,236,237);
+	background: rgba(241, 241, 239, 1);
 }
 .highlight-brown_background {
-	background: rgb(233,229,227);
+	background: rgba(244, 238, 238, 1);
 }
 .highlight-orange_background {
-	background: rgb(250,235,221);
+	background: rgba(251, 236, 221, 1);
 }
 .highlight-yellow_background {
-	background: rgb(251,243,219);
+	background: rgba(251, 243, 219, 1);
 }
 .highlight-teal_background {
-	background: rgb(221,237,234);
+	background: rgba(237, 243, 236, 1);
 }
 .highlight-blue_background {
-	background: rgb(221,235,241);
+	background: rgba(231, 243, 248, 1);
 }
 .highlight-purple_background {
-	background: rgb(234,228,242);
+	background: rgba(244, 240, 247, 0.8);
 }
 .highlight-pink_background {
-	background: rgb(244,223,235);
+	background: rgba(249, 238, 243, 0.8);
 }
 .highlight-red_background {
-	background: rgb(251,228,228);
+	background: rgba(253, 235, 236, 1);
 }
 .block-color-default {
 	color: inherit;
 	fill: inherit;
 }
 .block-color-gray {
-	color: rgba(55, 53, 47, 0.6);
-	fill: rgba(55, 53, 47, 0.6);
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
 }
 .block-color-brown {
-	color: rgb(100,71,58);
-	fill: rgb(100,71,58);
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
 }
 .block-color-orange {
-	color: rgb(217,115,13);
-	fill: rgb(217,115,13);
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
 }
 .block-color-yellow {
-	color: rgb(223,171,1);
-	fill: rgb(223,171,1);
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
 }
 .block-color-teal {
-	color: rgb(15,123,108);
-	fill: rgb(15,123,108);
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
 }
 .block-color-blue {
-	color: rgb(11,110,153);
-	fill: rgb(11,110,153);
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
 }
 .block-color-purple {
-	color: rgb(105,64,165);
-	fill: rgb(105,64,165);
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
 }
 .block-color-pink {
-	color: rgb(173,26,114);
-	fill: rgb(173,26,114);
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
 }
 .block-color-red {
-	color: rgb(224,62,62);
-	fill: rgb(224,62,62);
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
 }
 .block-color-gray_background {
-	background: rgb(235,236,237);
+	background: rgba(241, 241, 239, 1);
 }
 .block-color-brown_background {
-	background: rgb(233,229,227);
+	background: rgba(244, 238, 238, 1);
 }
 .block-color-orange_background {
-	background: rgb(250,235,221);
+	background: rgba(251, 236, 221, 1);
 }
 .block-color-yellow_background {
-	background: rgb(251,243,219);
+	background: rgba(251, 243, 219, 1);
 }
 .block-color-teal_background {
-	background: rgb(221,237,234);
+	background: rgba(237, 243, 236, 1);
 }
 .block-color-blue_background {
-	background: rgb(221,235,241);
+	background: rgba(231, 243, 248, 1);
 }
 .block-color-purple_background {
-	background: rgb(234,228,242);
+	background: rgba(244, 240, 247, 0.8);
 }
 .block-color-pink_background {
-	background: rgb(244,223,235);
+	background: rgba(249, 238, 243, 0.8);
 }
 .block-color-red_background {
-	background: rgb(251,228,228);
+	background: rgba(253, 235, 236, 1);
 }
-.select-value-color-default { background-color: rgba(206,205,202,0.5); }
-.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
-.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
-.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
-.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
-.select-value-color-green { background-color: rgba(0,135,107,0.2); }
-.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
-.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
-.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
-.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
 
 .checkbox {
 	display: inline-flex;
@@ -624,10 +666,11 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="8a26997d-08a7-46b8-9dae-fbb53199c77f" class="page sans"><header><img class="page-cover-image" src="Sanghwan%20Bae%208a26997d08a746b89daefbb53199c77f/emnlp.jpg" style="object-position:center 50%"/><h1 class="page-title">Sanghwan Bae</h1></header><div class="page-body"><p id="42eb9d26-393e-41f2-a189-c9b2e09e1254" class="">NLP Research Engineer, Naver Clova, Korea</p><p id="d62c6a7a-87e5-47b5-9b8b-b6e798dc0523" class="">✉  bsh1055@naver.com</p><p id="7d4639fd-7bb8-4bb3-a737-92ef01936d82" class="">
-</p><h2 id="b4e3d4f0-118b-478d-91db-c390c05dfd1f" class="">🤝 Work Experience</h2><hr id="a5734c5f-5ded-4054-95bf-4cb8dd10a257"/><ul id="bcb1f5ca-ed1c-4123-8103-f57392af7d66" class="bulleted-list"><li><mark class="highlight-blue">2021.02 - present</mark> Research Engineer @Clova, <a href="https://www.navercorp.com/">Naver Corp.</a></li></ul><ul id="60d207eb-e29c-41cf-a4b7-b8b653cfc684" class="bulleted-list"><li><mark class="highlight-blue">2020.01 - 2021.02</mark> Research Engineer @AI Advanced Research Lab., <a href="http://www.samsungsds.com">Samsung SDS</a></li></ul><h2 id="e5c9d77e-12dd-4bb3-aa6f-c2b264daf18f" class="">🎓 Education</h2><hr id="90846d1d-843f-4f80-8f48-4f2c0b93f583"/><ul id="b02af916-6228-49bf-aa64-364f39dba79b" class="bulleted-list"><li><mark class="highlight-blue">2018.03 - 2020.02</mark> M.S. in <a href="https://cse.snu.ac.kr/">Computer Science and Engineering</a>, <a href="http://www.snu.ac.kr/index.html">Seoul National University</a>, Seoul, Korea<ul id="a3396b22-970e-452a-9873-7ca67ffcb50d" class="bulleted-list"><li><a href="http://ids.snu.ac.kr">IDS Lab.</a></li></ul><ul id="8ee7f109-7a11-4e5f-8ead-f82214b55424" class="bulleted-list"><li>Supervised by Prof. Sang-goo Lee</li></ul></li></ul><ul id="590c737d-2453-45ce-94fd-591b012aea2c" class="bulleted-list"><li><mark class="highlight-blue">2011.03 - 2018.02</mark> B.A. in <a href="http://phil.snu.ac.kr/board/html/main/index.php">Philosophy</a> and B.S. in <a href="https://cse.snu.ac.kr/">Computer Science and Engineering</a> (<strong>cum laude</strong>), <a href="http://www.snu.ac.kr/index.html">Seoul National University</a>, Seoul, Korea</li></ul><p id="55e6982d-d041-4862-b1e2-1a639ca7d2b1" class="">
-</p><h2 id="c9651c31-d7ec-45d8-9ef9-065a817ec717" class="">📄 Publications</h2><hr id="a19d214e-4282-481f-b14f-5b9d2efb8201"/><ul id="b661df77-efd1-4a46-8f5e-9ed2026a487a" class="bulleted-list"><li><a href="https://www.aclweb.org/anthology/D19-5402.pdf">Summary Level Training of Sentence Rewriting for Abstractive Summarization</a><ul id="3c2d732c-769c-4341-a213-441750c45ada" class="bulleted-list"><li><strong>Sanghwan Bae</strong>, Taeuk Kim, Jihoon Kim, Sang-goo Lee</li></ul><ul id="37a42c07-afbb-40ad-9809-5a1238848a37" class="bulleted-list"><li>EMNLP 2019 Workshop on New Frontiers in Summarization (NewSum 2019)</li></ul></li></ul><ul id="8f01a2f8-2e62-4ad5-8b7c-6463ba52f5f7" class="bulleted-list"><li><a href="https://www.aclweb.org/anthology/S19-2054/">SNU_IDS at SemEval-2019 Task 3: Addressing Training-Test Class Distribution Mismatch in Conversational Classification</a><ul id="a7215b52-a863-4e7b-af35-161f5e85e5a3" class="bulleted-list"><li><strong>Sanghwan Bae</strong>, Jihun Choi, Sang-goo Lee</li></ul><ul id="da4b1cc0-56a5-476e-ae8d-fd5e6b3df7cd" class="bulleted-list"><li>International Workshop on Semantic Evaluation (SemEval 2019)</li></ul></li></ul><ul id="a1e59c77-f4d7-42b9-8b39-af9bf8cabee8" class="bulleted-list"><li><a href="https://arxiv.org/abs/1809.02286">Dynamic Compositionality in Recursive Neural Networks with Structure-aware Tag Representations</a><ul id="21988fa1-56f5-4fd2-8881-13c306282a47" class="bulleted-list"><li>Taeuk Kim, Jihun Choi, Daniel Edmiston, <strong>Sanghwan Bae</strong>, Sang-goo Lee</li></ul><ul id="24eb21c8-a613-4258-a719-5a96b348843d" class="bulleted-list"><li>Thirty-Third AAAI Confernce on Artificial Intelligence (AAAI 2019)</li></ul></li></ul><p id="2b79235b-abb5-47d9-8755-c53615a6aaae" class="">
-</p><h2 id="169c0da5-cb2c-4b2c-96b8-e6cbe044f158" class="">📰 News</h2><hr id="5f00ea9a-3a3f-4b90-8b11-c726e1665cc4"/><ul id="af1d3bde-30ee-49d6-88e4-1f9988b29b18" class="bulleted-list"><li>2021.01 - 3rd place on <a href="https://microsoft.github.io/msmarco/">MS MARCO</a> (document retrieval and ranking)</li></ul><ul id="85ee4b8e-c9ac-45c7-ba91-b2dd4821fa6c" class="bulleted-list"><li>2020.09 - 1st place on <a href="http://hotpotqa.github.io">HotpotQA</a> (multi-hop question answering)</li></ul><ul id="290212be-54b6-48c2-811d-fa4193f908d3" class="bulleted-list"><li>2020.07 - 3rd place on <a href="http://korquad.github.io/category/1.0_KOR.html">KorQuAD 1.0</a> (machine reading comprehension)</li></ul><ul id="a9e67fab-b975-4fcd-aa88-5ce60975f039" class="bulleted-list"><li>2020.04 - 1st place on <a href="http://korquad.github.io">KorQuAD 2.0</a> (machine reading comprehension)</li></ul><ul id="d1402fb1-f4a4-41d4-8828-94ea136d2001" class="bulleted-list"><li>2019.08 - State-of-the-art on CNN/Daily Mail and New York Times dataset (abstractive summarization)</li></ul><p id="0e391374-86a2-4fde-bca7-61599eed8312" class="">
-</p><h3 id="27529a1e-5536-40e4-9010-22cf969efb61" class="">👨‍🏫 Teaching Experience</h3><hr id="7398e1d7-861e-4627-ab98-271e9f15ff03"/><ul id="b2afe45e-4080-4231-b274-c159c2e3253b" class="bulleted-list"><li>TA - KMA DxP Program (Database and Text Analysis, 2019.6-7)</li></ul><ul id="288952f5-fc8a-4cc7-b7f5-db2d9923a1f5" class="bulleted-list"><li>TA - SNU Introduction to Databases (2019S)</li></ul><ul id="26085ae6-9df9-4e53-87a0-fd9e141ec6cb" class="bulleted-list"><li>TA - KMA Big Data Cube (Text Mining and Natural Language Processing, 2019.3)</li></ul><ul id="d367b64c-1c8a-4509-87be-a9ce5d11141e" class="bulleted-list"><li>TA - SNU Urban Data Science Lab. (Database, 2019.1)</li></ul><ul id="3d28bd52-f09d-42ea-aa5e-eae663246431" class="bulleted-list"><li>TA - SNU 4th Industrial Revolution Academy - Big data engineering 2 (Database, 2018.8-9)</li></ul><ul id="99db7904-6736-4255-9b2f-d8104503c4ac" class="bulleted-list"><li>TA - SNU Urban Data Science Lab. (Text Mining and Natural Language Processing, 2018.7)</li></ul><p id="3ff14db2-f5a5-4554-bd3d-ae933261dd6c" class="">
-</p><h3 id="521b36a2-9b16-4b82-842c-ce18bb437503" class="">👨‍💻 Skills</h3><hr id="8adfca19-e27c-4122-b850-19dba458f58c"/><ul id="4406018a-5ffc-4a3e-b820-a557384588ed" class="bulleted-list"><li>Python (PyTorch, Tensorflow)</li></ul><ul id="d99aaa70-253a-479a-b64f-e8916f2458e4" class="bulleted-list"><li>C, C++</li></ul><ul id="cf0d8c6f-73d6-432f-80e1-b4b72f5a8cb2" class="bulleted-list"><li>Java</li></ul><ul id="4f2aea5d-f751-4a7a-9433-03621cf0c60d" class="bulleted-list"><li>HTML, CSS, JavaScript</li></ul><p id="ae6e9a9e-c4a6-4700-9c79-c51a32fefc34" class="">
-</p><h3 id="dc563456-d465-4aa4-9bb8-9aba6eee4cf6" class="">📚 Researching Area</h3><hr id="c29f5954-e012-4323-bc85-3b2a200ed909"/><ul id="17761981-ec02-407a-9b70-eb00f0851cc6" class="bulleted-list"><li>Natural Language Processing with Deep Learning<ul id="a820a27d-7b73-49b4-9ed3-d7a48a8d5338" class="bulleted-list"><li>Open Domain Question Answering</li></ul><ul id="9a295c74-8091-4fb9-85e9-a4b25de015fd" class="bulleted-list"><li>Machine Reading Comprehension</li></ul><ul id="560bcbed-72a9-42d4-9d42-5ca0a8847b29" class="bulleted-list"><li>Text Summarization</li></ul><ul id="f810d5f9-22ea-4a8d-8aeb-a34476da9ad1" class="bulleted-list"><li>Conversational Networks</li></ul><ul id="a214b04a-d58c-44f6-8c94-b395144e70b0" class="bulleted-list"><li>NLP for the Korean Language</li></ul></li></ul></div></article></body></html>
+</style></head><body><article id="8a26997d-08a7-46b8-9dae-fbb53199c77f" class="page sans"><header><img class="page-cover-image" src="images/cover.jpeg" style="object-position:center 50%"/><h1 class="page-title">Sanghwan Bae</h1></header><div class="page-body"><p id="42eb9d26-393e-41f2-a189-c9b2e09e1254" class="">NLP Research Engineer, Naver Clova, Korea</p><p id="d62c6a7a-87e5-47b5-9b8b-b6e798dc0523" class="">✉  bsh1055@naver.com</p><p id="7d4639fd-7bb8-4bb3-a737-92ef01936d82" class="">
+</p><h2 id="b4e3d4f0-118b-478d-91db-c390c05dfd1f" class="">🤝 Work Experience</h2><hr id="a5734c5f-5ded-4054-95bf-4cb8dd10a257"/><ul id="bcb1f5ca-ed1c-4123-8103-f57392af7d66" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue">2021.02 - present</mark> Research Engineer @Clova, <a href="https://www.navercorp.com/">Naver Corp.</a></li></ul><ul id="60d207eb-e29c-41cf-a4b7-b8b653cfc684" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue">2020.01 - 2021.02</mark> Research Engineer @AI Advanced Research Lab., <a href="http://www.samsungsds.com">Samsung SDS</a></li></ul><h2 id="e5c9d77e-12dd-4bb3-aa6f-c2b264daf18f" class="">🎓 Education</h2><hr id="90846d1d-843f-4f80-8f48-4f2c0b93f583"/><ul id="b02af916-6228-49bf-aa64-364f39dba79b" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue">2018.03 - 2020.02</mark> M.S. in <a href="https://cse.snu.ac.kr/">Computer Science and Engineering</a>, <a href="http://www.snu.ac.kr/index.html">Seoul National University</a>, Seoul, Korea<ul id="a3396b22-970e-452a-9873-7ca67ffcb50d" class="bulleted-list"><li style="list-style-type:circle"><a href="http://ids.snu.ac.kr">IDS Lab.</a></li></ul><ul id="8ee7f109-7a11-4e5f-8ead-f82214b55424" class="bulleted-list"><li style="list-style-type:circle">Supervised by Prof. Sang-goo Lee</li></ul></li></ul><ul id="590c737d-2453-45ce-94fd-591b012aea2c" class="bulleted-list"><li style="list-style-type:disc"><mark class="highlight-blue">2011.03 - 2018.02</mark> B.A. in <a href="http://phil.snu.ac.kr/board/html/main/index.php">Philosophy</a> and B.S. in <a href="https://cse.snu.ac.kr/">Computer Science and Engineering</a> (<strong>cum laude</strong>), <a href="http://www.snu.ac.kr/index.html">Seoul National University</a>, Seoul, Korea</li></ul><p id="55e6982d-d041-4862-b1e2-1a639ca7d2b1" class="">
+</p><h2 id="c9651c31-d7ec-45d8-9ef9-065a817ec717" class="">📄 Publications</h2><hr id="a19d214e-4282-481f-b14f-5b9d2efb8201"/><ul id="4e45c2fa-12e4-419c-a95f-f5dac60b1c0f" class="bulleted-list"><li style="list-style-type:disc"><a href="https://openreview.net/pdf?id=BAgegCiZrZ9">Building a Role Specified Open-Domain Dialogue System Leveraging Large-Scale Language Models</a><ul id="2f5a5729-2f78-4359-95b1-44c98a06e0ac" class="bulleted-list"><li style="list-style-type:circle"><strong>Sanghwan Bae</strong>, Donghyun Kwak, Sungdong Kim, Donghoon Ham, Soyoung Kang, Sang-Woo Lee, Woomyoung Park</li></ul><ul id="8096c73c-32cd-4363-a724-83cd25f7aed1" class="bulleted-list"><li style="list-style-type:circle">2022 Annual Conference of the North American Chapter of the Association for Computational Linguistics (NAACL 2022)</li></ul></li></ul><ul id="b661df77-efd1-4a46-8f5e-9ed2026a487a" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.aclweb.org/anthology/D19-5402.pdf">Summary Level Training of Sentence Rewriting for Abstractive Summarization</a><ul id="3c2d732c-769c-4341-a213-441750c45ada" class="bulleted-list"><li style="list-style-type:circle"><strong>Sanghwan Bae</strong>, Taeuk Kim, Jihoon Kim, Sang-goo Lee</li></ul><ul id="37a42c07-afbb-40ad-9809-5a1238848a37" class="bulleted-list"><li style="list-style-type:circle">EMNLP 2019 Workshop on New Frontiers in Summarization (NewSum 2019)</li></ul></li></ul><ul id="8f01a2f8-2e62-4ad5-8b7c-6463ba52f5f7" class="bulleted-list"><li style="list-style-type:disc"><a href="https://www.aclweb.org/anthology/S19-2054/">SNU_IDS at SemEval-2019 Task 3: Addressing Training-Test Class Distribution Mismatch in Conversational Classification</a><ul id="a7215b52-a863-4e7b-af35-161f5e85e5a3" class="bulleted-list"><li style="list-style-type:circle"><strong>Sanghwan Bae</strong>, Jihun Choi, Sang-goo Lee</li></ul><ul id="da4b1cc0-56a5-476e-ae8d-fd5e6b3df7cd" class="bulleted-list"><li style="list-style-type:circle">International Workshop on Semantic Evaluation (SemEval 2019)</li></ul></li></ul><ul id="a1e59c77-f4d7-42b9-8b39-af9bf8cabee8" class="bulleted-list"><li style="list-style-type:disc"><a href="https://arxiv.org/abs/1809.02286">Dynamic Compositionality in Recursive Neural Networks with Structure-aware Tag Representations</a><ul id="21988fa1-56f5-4fd2-8881-13c306282a47" class="bulleted-list"><li style="list-style-type:circle">Taeuk Kim, Jihun Choi, Daniel Edmiston, <strong>Sanghwan Bae</strong>, Sang-goo Lee</li></ul><ul id="24eb21c8-a613-4258-a719-5a96b348843d" class="bulleted-list"><li style="list-style-type:circle">Thirty-Third AAAI Confernce on Artificial Intelligence (AAAI 2019)</li></ul></li></ul><p id="2b79235b-abb5-47d9-8755-c53615a6aaae" class="">
+</p><h2 id="169c0da5-cb2c-4b2c-96b8-e6cbe044f158" class="">📰 News</h2><hr id="5f00ea9a-3a3f-4b90-8b11-c726e1665cc4"/><ul id="caba3eef-edb6-4e07-9579-bed6e5e0801a" class="bulleted-list"><li style="list-style-type:disc">2021.11 - CLOVA <a href="https://www.navercorp.com/promotion/pressReleasesView/30727">CareCall for senior release</a></li></ul><ul id="af1d3bde-30ee-49d6-88e4-1f9988b29b18" class="bulleted-list"><li style="list-style-type:disc">2021.11 - NAVER DEVIEW 2021: <a href="https://deview.kr/2021/sessions/474">Building the fastest and safest chatbot (Feat. HyperCLOVA)</a></li></ul><ul id="1da09ef7-590c-4bbc-ba91-74099dd0b2b3" class="bulleted-list"><li style="list-style-type:disc">2021.01 - 3rd place on <a href="https://microsoft.github.io/msmarco/">MS MARCO</a> (document retrieval and ranking)</li></ul><ul id="85ee4b8e-c9ac-45c7-ba91-b2dd4821fa6c" class="bulleted-list"><li style="list-style-type:disc">2020.09 - 1st place on <a href="http://hotpotqa.github.io">HotpotQA</a> (multi-hop question answering)</li></ul><ul id="290212be-54b6-48c2-811d-fa4193f908d3" class="bulleted-list"><li style="list-style-type:disc">2020.07 - 3rd place on <a href="http://korquad.github.io/category/1.0_KOR.html">KorQuAD 1.0</a> (machine reading comprehension)</li></ul><ul id="a9e67fab-b975-4fcd-aa88-5ce60975f039" class="bulleted-list"><li style="list-style-type:disc">2020.04 - 1st place on <a href="http://korquad.github.io">KorQuAD 2.0</a> (machine reading comprehension)</li></ul><ul id="d1402fb1-f4a4-41d4-8828-94ea136d2001" class="bulleted-list"><li style="list-style-type:disc">2019.08 - State-of-the-art on CNN/Daily Mail and New York Times dataset (abstractive summarization)</li></ul><p id="0e391374-86a2-4fde-bca7-61599eed8312" class="">
+</p><h3 id="27529a1e-5536-40e4-9010-22cf969efb61" class="">👨‍🏫 Teaching Experience</h3><hr id="7398e1d7-861e-4627-ab98-271e9f15ff03"/><ul id="b2afe45e-4080-4231-b274-c159c2e3253b" class="bulleted-list"><li style="list-style-type:disc">TA - KMA DxP Program (Database and Text Analysis, 2019.6-7)</li></ul><ul id="288952f5-fc8a-4cc7-b7f5-db2d9923a1f5" class="bulleted-list"><li style="list-style-type:disc">TA - SNU Introduction to Databases (2019S)</li></ul><ul id="26085ae6-9df9-4e53-87a0-fd9e141ec6cb" class="bulleted-list"><li style="list-style-type:disc">TA - KMA Big Data Cube (Text Mining and Natural Language Processing, 2019.3)</li></ul><ul id="d367b64c-1c8a-4509-87be-a9ce5d11141e" class="bulleted-list"><li style="list-style-type:disc">TA - SNU Urban Data Science Lab. (Database, 2019.1)</li></ul><ul id="3d28bd52-f09d-42ea-aa5e-eae663246431" class="bulleted-list"><li style="list-style-type:disc">TA - SNU 4th Industrial Revolution Academy - Big data engineering 2 (Database, 2018.8-9)</li></ul><ul id="99db7904-6736-4255-9b2f-d8104503c4ac" class="bulleted-list"><li style="list-style-type:disc">TA - SNU Urban Data Science Lab. (Text Mining and Natural Language Processing, 2018.7)</li></ul><p id="3ff14db2-f5a5-4554-bd3d-ae933261dd6c" class="">
+</p><h3 id="521b36a2-9b16-4b82-842c-ce18bb437503" class="">👨‍💻 Skills</h3><hr id="8adfca19-e27c-4122-b850-19dba458f58c"/><ul id="4406018a-5ffc-4a3e-b820-a557384588ed" class="bulleted-list"><li style="list-style-type:disc">Python (PyTorch, Tensorflow)</li></ul><ul id="d99aaa70-253a-479a-b64f-e8916f2458e4" class="bulleted-list"><li style="list-style-type:disc">C, C++</li></ul><ul id="cf0d8c6f-73d6-432f-80e1-b4b72f5a8cb2" class="bulleted-list"><li style="list-style-type:disc">Java</li></ul><ul id="4f2aea5d-f751-4a7a-9433-03621cf0c60d" class="bulleted-list"><li style="list-style-type:disc">HTML, CSS, JavaScript</li></ul><p id="ae6e9a9e-c4a6-4700-9c79-c51a32fefc34" class="">
+</p><h3 id="dc563456-d465-4aa4-9bb8-9aba6eee4cf6" class="">📚 Researching Area</h3><hr id="c29f5954-e012-4323-bc85-3b2a200ed909"/><ul id="17761981-ec02-407a-9b70-eb00f0851cc6" class="bulleted-list"><li style="list-style-type:disc">Natural Language Processing with Deep Learning<ul id="a820a27d-7b73-49b4-9ed3-d7a48a8d5338" class="bulleted-list"><li style="list-style-type:circle">Open Domain Question Answering</li></ul><ul id="9a295c74-8091-4fb9-85e9-a4b25de015fd" class="bulleted-list"><li style="list-style-type:circle">Machine Reading Comprehension</li></ul><ul id="560bcbed-72a9-42d4-9d42-5ca0a8847b29" class="bulleted-list"><li style="list-style-type:circle">Text Summarization</li></ul><ul id="f810d5f9-22ea-4a8d-8aeb-a34476da9ad1" class="bulleted-list"><li style="list-style-type:circle">Conversational Networks</li></ul><ul id="a214b04a-d58c-44f6-8c94-b395144e70b0" class="bulleted-list"><li style="list-style-type:circle">NLP for the Korean Language</li></ul><p id="6fc52fe5-28b3-4f20-8b3e-1df0d764d8b7" class="">
+</p></li></ul></div></article></body></html>
